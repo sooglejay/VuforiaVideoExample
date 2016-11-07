@@ -230,9 +230,9 @@ public class VideoPlayback extends Activity implements
     private void loadTextures()
     {
         mTextures.add(Texture.loadTextureFromApk(
-            "VideoPlayback/VuforiaSizzleReel_1.png", getAssets()));
+            "VideoPlayback/VuforiaSizzleReel_2.jpg", getAssets()));
         mTextures.add(Texture.loadTextureFromApk(
-            "VideoPlayback/VuforiaSizzleReel_2.png", getAssets()));
+            "VideoPlayback/VuforiaSizzleReel_1.png", getAssets()));
         mTextures.add(Texture.loadTextureFromApk("VideoPlayback/play.png",
             getAssets()));
         mTextures.add(Texture.loadTextureFromApk("VideoPlayback/busy.png",
