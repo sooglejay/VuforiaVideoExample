@@ -37,6 +37,7 @@ import com.vuforia.VIDEO_BACKGROUND_REFLECTION;
 import com.vuforia.Vec2F;
 import com.vuforia.Vec3F;
 import com.vuforia.Vuforia;
+import com.vuforia.samples.SampleApplication.Constant;
 import com.vuforia.samples.SampleApplication.SampleApplicationSession;
 import com.vuforia.samples.SampleApplication.SampleAppRenderer;
 import com.vuforia.samples.SampleApplication.SampleAppRendererControl;
@@ -532,7 +533,7 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer, SampleAppR
             
             // We store the modelview matrix to be used later by the tap
             // calculation
-            if (imageTarget.getName().compareTo("stones") == 0)
+            if (imageTarget.getName().compareTo(Constant.IMG_1) == 0)
                 currentTarget = VideoPlayback.STONES;
             else
                 currentTarget = VideoPlayback.CHIPS;
@@ -635,7 +636,7 @@ public class VideoPlaybackRenderer implements GLSurfaceView.Renderer, SampleAppR
                 GLES20.glVertexAttribPointer(videoPlaybackVertexHandle, 3,
                     GLES20.GL_FLOAT, false, 0, quadVertices);
 
-                if (imageTarget.getName().compareTo("stones") == 0)
+                if (imageTarget.getName().compareTo(Constant.IMG_1) == 0)
                     GLES20.glVertexAttribPointer(videoPlaybackTexCoordHandle,
                         2, GLES20.GL_FLOAT, false, 0,
                         fillBuffer(videoQuadTextureCoordsTransformedStones));
