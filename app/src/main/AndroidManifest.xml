@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.vuforia.samples.VideoPlayback"
-    android:versionCode="600"
-    android:versionName="6.0">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="google.com.testanddel">
+ 
 
     <!--
         The application's compatibility with one or more versions of the Android
@@ -11,7 +11,6 @@
         android:minSdkVersion = application's required minimum API level to run
         android:targetSdkVersion = application's targeted API level
     -->
-    <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="22" />
 
     <uses-feature android:glEsVersion="0x00020000" />
 
@@ -30,7 +29,7 @@
          assumed as required.
     -->
     <uses-feature android:name="android.hardware.camera" />
-    
+
     <!--
         Add this permission to get access to the camera.
     -->
@@ -39,7 +38,7 @@
     <!--
         Add this permission to allow opening network sockets.
     -->
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <!--
         Add this permission to check which network access properties (e.g.
@@ -47,8 +46,8 @@
      -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <!--
       NOTE: The setting 'android:launchMode="singleTask"' makes sure
       that the activity can begin only one task and the device can hold only
@@ -64,75 +63,65 @@
       that the application starts in full screen mode without a title bar.
     -->
     <application
+        tools:ignore="GoogleAppIndexingWarning"
+        android:allowBackup="true"
+        android:description="@string/app_description"
         android:icon="@drawable/icon"
         android:label="@string/app_name"
-        android:description="@string/app_description"
         android:launchMode="singleTask"
-        android:allowBackup="true"
-        android:theme="@style/SampleAppsTheme"
-        >
-        
+        android:theme="@style/SampleAppsTheme">
 
-         <!--
-          NOTE: The values in 'android:configChanges' ensure that Android will 
-          not destroy and re-create the activity when the user flips the 
-          keyboard, changes the orientation of the device, or the actual or 
-          physical screen resolution changes, but calls the Activity's 
-          onConfigurationChanged() function instead.
 
-          NOTE 2: In order to prevent automatic reactions to orientation
-          changes in addition to setting proper values for
-          'android:configChanges', you also must explicitly specify the screen
-          orientation used by the application, either by setting the attribute
-          'android:screenOrientation' or in code by calling
-          Activity.setRequestedOrientation().
-        -->
+        <!--
+         NOTE: The values in 'android:configChanges' ensure that Android will 
+         not destroy and re-create the activity when the user flips the 
+         keyboard, changes the orientation of the device, or the actual or 
+         physical screen resolution changes, but calls the Activity's 
+         onConfigurationChanged() function instead.
+
+         NOTE 2: In order to prevent automatic reactions to orientation
+         changes in addition to setting proper values for
+         'android:configChanges', you also must explicitly specify the screen
+         orientation used by the application, either by setting the attribute
+         'android:screenOrientation' or in code by calling
+         Activity.setRequestedOrientation().
+       -->
         <!-- Splash Screen Activity -->
 
-         <activity
-            android:name=".ui.ActivityList.ActivitySplashScreen"
+        <activity
+            android:name="google.com.testanddel.ActivityList.ActivitySplashScreen"
             android:configChanges="orientation|keyboardHidden"
-            android:screenOrientation="portrait"
             android:noHistory="true"
-            >
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-         </activity>
-        
-         <activity
-            android:name=".ui.ActivityList.AboutScreen"
-            android:configChanges="orientation|keyboardHidden"
-            android:screenOrientation="portrait"
-            >
         </activity>
-         
+
         <activity
-            android:name=".app.VideoPlayback.VideoPlayback"
+            android:name="google.com.testanddel.ActivityList.AboutScreen"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="google.com.testanddel.VideoPlayback.VideoPlayback"
             android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize"
-        	android:theme="@style/SampleAppsTheme"
- 	        android:launchMode="singleTask"
-            />
-        
+            android:launchMode="singleTask"
+            android:theme="@style/SampleAppsTheme" />
+
 
         <!--
             This is the activity that holds the full screen media player.
         -->
-        <activity android:label="@string/app_name"
-            android:name=".app.VideoPlayback.FullscreenPlayback"
+        <activity
+            android:name="google.com.testanddel.VideoPlayback.FullscreenPlayback"
             android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize"
- 	        android:launchMode="singleTask"
- 	        android:screenOrientation="landscape"
-            android:exported="false">
+            android:exported="false"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"/>
 
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-            </intent-filter>
-
-        </activity>
-         
     </application>
 
 </manifest>

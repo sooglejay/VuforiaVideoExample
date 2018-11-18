@@ -1,42 +1,45 @@
 apply plugin: 'com.android.application'
 
-def VUFORIA_SDK_DIR = '../../..'
-def NATIVE_LIB_DIR = 'build/lib'
-def JAR_DIR = 'build/java/vuforia'
-
 android {
-    compileSdkVersion 22
-    buildToolsVersion "22.0.1"
-
-
+    compileSdkVersion 28
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
 
     defaultConfig {
-        applicationId "com.vuforia.samples.VideoPlayback"
-        minSdkVersion 8
-        targetSdkVersion 22
-        versionCode 600
-        versionName "6.0"
+        applicationId "google.com.testanddel"
+        minSdkVersion 15
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        externalNativeBuild {
+            cmake {
+                cppFlags ""
+                arguments "-DANDROID_STL=c++_shared"
+            }
+        }
     }
-	
-    archivesBaseName = rootProject.projectDir.getName()
-	
     buildTypes {
         release {
             minifyEnabled false
-            ndk {
-                abiFilters "armeabi-v7a"
-            }
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
-        debug {
-            minifyEnabled false
-            debuggable true
-            ndk {
-                abiFilters "armeabi-v7a"
-            }
+    }
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
         }
     }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
