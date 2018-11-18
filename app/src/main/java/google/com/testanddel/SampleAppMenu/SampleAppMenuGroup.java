@@ -89,22 +89,7 @@ public class SampleAppMenuGroup
         selectorResource = android.R.drawable.list_selector_background;
         
         mFont = Typeface.create("sans-serif", Typeface.NORMAL);
-        
-        TextView titleView = (TextView) mLayout
-            .findViewById(R.id.menu_group_title);
-        titleView.setText(title);
-        titleView.setTextSize(mActivity.getResources().getDimension(
-            R.dimen.menu_entries_title));
-        titleView.setClickable(false);
-        
-        if (!hasTitle)
-        {
-            mLayout.removeView(titleView);
-            View dividerView = mLayout
-                .findViewById(R.id.menu_group_title_divider);
-            mLayout.removeView(dividerView);
-        }
-        
+
         mClickListener = new OnClickListener()
         {
             

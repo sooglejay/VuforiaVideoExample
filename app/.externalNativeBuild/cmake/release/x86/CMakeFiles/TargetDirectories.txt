@@ -1,3 +1,3 @@
-/Users/jiangwei/bytedance/others/xie/app/.externalNativeBuild/cmake/release/x86/CMakeFiles/edit_cache.dir
-/Users/jiangwei/bytedance/others/xie/app/.externalNativeBuild/cmake/release/x86/CMakeFiles/rebuild_cache.dir
-/Users/jiangwei/bytedance/others/xie/app/.externalNativeBuild/cmake/release/x86/CMakeFiles/native-lib.dir
+/Users/jiangwei/bytedance/others/VuforiaVideoExample/app/.externalNativeBuild/cmake/release/x86/CMakeFiles/edit_cache.dir
+/Users/jiangwei/bytedance/others/VuforiaVideoExample/app/.externalNativeBuild/cmake/release/x86/CMakeFiles/rebuild_cache.dir
+/Users/jiangwei/bytedance/others/VuforiaVideoExample/app/.externalNativeBuild/cmake/release/x86/CMakeFiles/native-lib.dir

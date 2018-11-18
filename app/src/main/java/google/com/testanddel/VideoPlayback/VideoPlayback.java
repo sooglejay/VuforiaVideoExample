@@ -614,7 +614,7 @@ public class VideoPlayback extends Activity implements
             if (!result)
                 Log.e(LOGTAG, "Unable to enable continuous autofocus");
 
-            mSampleAppMenu = new SampleAppMenu(this, this, "Video Playback",
+            mSampleAppMenu = new SampleAppMenu(this, this, getString(R.string.app_name),
                     mGlView, mUILayout, null);
             setSampleAppMenuSettings();
 
@@ -684,14 +684,9 @@ public class VideoPlayback extends Activity implements
     private void setSampleAppMenuSettings() {
         SampleAppMenuGroup group;
 
-        group = mSampleAppMenu.addGroup("", false);
-        group.addTextItem(getString(R.string.menu_back), -1);
-
         group = mSampleAppMenu.addGroup("", true);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
-            group.addSelectionItem(getString(R.string.menu_playFullscreenVideo),
-                    CMD_FULLSCREEN_VIDEO, mPlayFullscreenVideo);
-        }
+        group.addSelectionItem(getString(R.string.menu_playFullscreenVideo),
+                CMD_FULLSCREEN_VIDEO, mPlayFullscreenVideo);
 
         mSampleAppMenu.attachMenu();
     }
